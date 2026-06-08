@@ -157,8 +157,8 @@ exports.purchaseBookStripe=async(req,res)=>{
         const session=await stripe.checkout.sessions.create({
             // success_url:"http://localhost:5173/payment-success",
             // cancel_url:"http://localhost:5173/payment-error",
-            success_url:"https://bookstore-server-avd0.onrender.com/payment-success",
-            cancel_url:"https://bookstore-server-avd0.onrender.com/payment-error",
+            success_url:"https://book-store-fe-flax-seven.vercel.app/payment-success",
+            cancel_url:"https://book-store-fe-flax-seven.vercel.app/payment-error",
             payment_method_types:['card'],
             line_items,
             mode:'payment'
