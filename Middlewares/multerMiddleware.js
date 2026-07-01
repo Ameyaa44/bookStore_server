@@ -1,4 +1,10 @@
 const multer=require('multer')
+const fs = require('fs')
+
+// Ensure directory exists
+if (!fs.existsSync('./bookImages')) {
+    fs.mkdirSync('./bookImages', { recursive: true })
+}
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{

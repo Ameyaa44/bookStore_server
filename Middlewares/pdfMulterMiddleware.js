@@ -1,5 +1,11 @@
 const multer=require('multer')
 const jwtMiddleware = require('./jwtMiddleware')
+const fs = require('fs')
+
+// Ensure directory exists
+if (!fs.existsSync('./resumeFiles')) {
+    fs.mkdirSync('./resumeFiles', { recursive: true })
+}
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
